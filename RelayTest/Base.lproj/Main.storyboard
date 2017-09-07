@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yFV-eD-dsn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="lPt-8J-4Gq">
+            <objects>
+                <navigationController id="yFV-eD-dsn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pft-eW-ZDk">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VbM-FF-2Zs" kind="relationship" relationship="rootViewController" id="JrI-fV-4bG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckD-q4-36x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1331" y="100"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="7ux-A7-fgA">
+            <objects>
+                <viewController id="VbM-FF-2Zs" customClass="HomeViewController" customModule="RelayTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SWY-h1-yg7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to send..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nmj-1K-nDv">
+                                <rect key="frame" x="16" y="84" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kaM-8X-cNb">
+                                <rect key="frame" x="16" y="160" width="343" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csa-f6-v1j">
+                                <rect key="frame" x="169" y="122" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="touchedSend:" destination="VbM-FF-2Zs" eventType="touchUpInside" id="Tx3-bm-X0d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kaM-8X-cNb" firstAttribute="top" secondItem="Csa-f6-v1j" secondAttribute="bottom" constant="8" id="25x-MH-udp"/>
+                            <constraint firstItem="Csa-f6-v1j" firstAttribute="centerX" secondItem="SWY-h1-yg7" secondAttribute="centerX" id="98o-QG-4qD"/>
+                            <constraint firstItem="WpF-ee-suW" firstAttribute="trailing" secondItem="kaM-8X-cNb" secondAttribute="trailing" constant="16" id="9rA-m8-KSo"/>
+                            <constraint firstItem="WpF-ee-suW" firstAttribute="bottom" secondItem="kaM-8X-cNb" secondAttribute="bottom" constant="20" id="CA4-Yu-ZOH"/>
+                            <constraint firstItem="Nmj-1K-nDv" firstAttribute="leading" secondItem="WpF-ee-suW" secondAttribute="leading" constant="16" id="OJU-i9-B6M"/>
+                            <constraint firstItem="Nmj-1K-nDv" firstAttribute="top" secondItem="WpF-ee-suW" secondAttribute="top" constant="20" id="Trl-QS-WCQ"/>
+                            <constraint firstItem="WpF-ee-suW" firstAttribute="trailing" secondItem="Nmj-1K-nDv" secondAttribute="trailing" constant="16" id="rOK-XN-zcf"/>
+                            <constraint firstItem="Csa-f6-v1j" firstAttribute="top" secondItem="Nmj-1K-nDv" secondAttribute="bottom" constant="8" id="sMd-1g-Xmo"/>
+                            <constraint firstItem="kaM-8X-cNb" firstAttribute="leading" secondItem="WpF-ee-suW" secondAttribute="leading" constant="16" id="vwU-Eg-PGU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WpF-ee-suW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="3C4-h5-ayS"/>
+                    <connections>
+                        <outlet property="response" destination="kaM-8X-cNb" id="AAu-0L-6cv"/>
+                        <outlet property="textToSend" destination="Nmj-1K-nDv" id="Lqc-kZ-RkG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jG1-n3-1LO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-492" y="98.50074962518741"/>
+        </scene>
+    </scenes>
+</document>
